@@ -10,17 +10,25 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
   });
 });
 
+function setStatus(msg, type) {
+  const status = document.getElementById('status');
+  status.classList.remove('success', 'error');
+  status.textContent = msg;
+  if (type === 'success') status.classList.add('success');
+  else if (type === 'error') status.classList.add('error');
+}
+
 document.getElementById('create-bug').addEventListener('click', () => {
   const title = document.getElementById('bug-title').value;
   const description = document.getElementById('bug-desc').value;
   const reproSteps = document.getElementById('bug-repro').value;
   const reportedBy = document.getElementById('bug-reportedby').value;
-  document.getElementById('status').textContent = 'Creating bug...';
+  setStatus('Creating bug...');
   chrome.runtime.sendMessage({ action: 'createBug', data: { title, description, reproSteps, reportedBy } }, (res) => {
     if (res && res.success) {
-      document.getElementById('status').textContent = 'Bug created! ID: ' + res.id;
+      setStatus('Bug created! ID: ' + res.id, 'success');
     } else {
-      document.getElementById('status').textContent = 'Error: ' + (res && res.error ? res.error : 'Unknown error');
+      setStatus('Error: ' + (res && res.error ? res.error : 'Unknown error'), 'error');
     }
   });
 });
