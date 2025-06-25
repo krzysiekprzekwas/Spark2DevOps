@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Azure DevOps Settings</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 350px; margin: 20px auto; }
+    .header { display: flex; align-items: center; margin-bottom: 10px; }
+    .logo { width: 32px; height: 32px; margin-right: 10px; }
+    label { display: block; margin-top: 10px; }
+    input { width: 100%; padding: 5px; margin-top: 2px; }
+    button { margin-top: 15px; padding: 8px 12px; }
+    #status { min-height: 20px; color: #0078d4; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="icons/settings.png" alt="Settings" class="logo">
+    <h2>Azure DevOps Settings</h2>
+  </div>
+  <label>Token:<input type="password" id="token"></label>
+  <label>Organization:<input type="text" id="org"></label>
+  <label>Project:<input type="text" id="project"></label>
+  <button id="save">Save</button>
+  <div id="status"></div>
+  <script src="options.js"></script>
+</body>
+</html> 

@@ -1,0 +1,8 @@
+.header { display: flex; align-items: center; margin-bottom: 10px; }
+.logo { width: 32px; height: 32px; margin-right: 10px; }
+h1 { font-size: 1.2em; margin: 0; }
+#scrape-create { width: 100%; padding: 10px; margin-bottom: 10px; font-size: 1em; }
+#status { min-height: 20px; color: #b00; margin-bottom: 10px; }
+#open-options { display: block; text-align: right; font-size: 0.9em; color: #0078d4; text-decoration: none; }
+#open-options:hover { text-decoration: underline; }
+body { min-width: 250px; font-family: Arial, sans-serif; padding: 10px; } 

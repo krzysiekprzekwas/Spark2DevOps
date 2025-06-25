@@ -1,95 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ITSM to Azure DevOps Bug Creator</title>
-  <style>
-    body {
-      width: 400px;
-      padding: 15px;
-      font-family: Arial, sans-serif;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    label {
-      font-weight: bold;
-    }
-    input, textarea {
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      padding: 10px;
-      background-color: #0078d4;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #106ebe;
-    }
-    .settings-icon {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>ITSM to Azure DevOps</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <div class="container">
-    <img src="icons/settings.png" class="settings-icon" id="settingsIcon" alt="Settings">
-    
-    <div id="mainContent">
-      <h2>Create Bug from Current Page</h2>
-      <div class="form-group">
-        <label for="bugTitle">Title:</label>
-        <input type="text" id="bugTitle" readonly>
-      </div>
-      <div class="form-group">
-        <label for="bugDescription">Description:</label>
-        <textarea id="bugDescription" rows="4" readonly></textarea>
-      </div>
-      <button id="createBug">Create Bug</button>
-    </div>
-
-    <div id="settingsContent" class="hidden">
-      <h2>Settings</h2>
-      <div class="form-group">
-        <label for="orgUrl">Azure DevOps Organization URL:</label>
-        <input type="url" id="orgUrl" placeholder="https://dev.azure.com/your-organization">
-      </div>
-      <div class="form-group">
-        <label for="projectName">Project Name:</label>
-        <input type="text" id="projectName">
-      </div>
-      <div class="form-group">
-        <label for="pat">Personal Access Token:</label>
-        <input type="password" id="pat">
-      </div>
-      <div class="form-group">
-        <label for="areaPath">Default Area Path:</label>
-        <input type="text" id="areaPath">
-      </div>
-      <div class="form-group">
-        <label for="iterationPath">Default Iteration Path:</label>
-        <input type="text" id="iterationPath">
-      </div>
-      <button id="saveSettings">Save Settings</button>
-    </div>
+  <div class="header">
+    <img src="icons/icon48.png" alt="Logo" class="logo">
+    <h1>Bug Reporter</h1>
   </div>
+  <label>Title:<input type="text" id="bug-title"></label>
+  <label>Description:<textarea id="bug-desc" rows="3"></textarea></label>
+  <label>Repro Steps:<textarea id="bug-repro" rows="3"></textarea></label>
+  <label>Reported by:<input type="text" id="bug-reportedby"></label>
+  <button id="create-bug">Create Bug</button>
+  <div id="status"></div>
+  <a href="#" id="open-options">Settings</a>
   <script src="popup.js"></script>
 </body>
 </html> 
