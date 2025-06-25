@@ -15,7 +15,12 @@
   <label>Repro Steps:<textarea id="bug-repro" rows="3"></textarea></label>
   <label>Reported by:<input type="text" id="bug-reportedby"></label>
   <button id="create-bug">Create Bug</button>
-  <div id="status"></div>
+  <div id="status">
+    <span id="status-text"></span>
+    <span id="status-arrow" aria-hidden="true">
+      <svg width="18" height="18" viewBox="0 0 20 20" style="vertical-align: middle;"><path d="M7 5l5 5-5 5" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </div>
   <a href="#" id="open-options">Settings</a>
   <script src="popup.js"></script>
 </body>

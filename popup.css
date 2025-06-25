@@ -41,9 +41,39 @@ textarea { resize: vertical; min-height: 40px; }
   padding: 4px 0;
   background: #f4f4f4;
   transition: color 0.2s, background 0.2s;
+  position: relative;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-#status.success { color: #fff; background: #28a745; }
-#status.error { color: #fff; background: #d32f2f; }
+#status.success {
+  color: #fff;
+  background: #28a745;
+  cursor: pointer;
+}
+#status.error {
+  color: #fff;
+  background: #d32f2f;
+}
+#status-arrow {
+  display: none;
+  margin-left: 8px;
+  transition: transform 0.2s;
+}
+#status.success #status-arrow {
+  display: inline-block;
+}
+#status.success:hover {
+  background: #218838;
+  text-decoration: underline;
+}
+#status.success:hover #status-arrow {
+  transform: translateX(4px);
+}
+#status-text {
+  display: inline-block;
+}
 #open-options {
   display: block;
   text-align: right;
